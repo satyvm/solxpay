@@ -30,7 +30,7 @@ export function ConnectButton() {
       mode="contained"
       disabled={authorizationInProgress}
       onPress={handleConnectPress}
-      style={{ flex: 1 }}
+      style={{ flex: 1, backgroundColor: "#444" }}
     >
       Connect
     </Button>
@@ -47,11 +47,7 @@ export function SignInButton() {
         return;
       }
       setSignInInProgress(true);
-      await signIn({
-        domain: "yourdomain.com",
-        statement: "Sign into Expo Template App",
-        uri: "https://yourdomain.com",
-      });
+      await signIn();
     } catch (err: any) {
       alertAndLog(
         "Error during sign in",
@@ -66,7 +62,7 @@ export function SignInButton() {
       mode="outlined"
       disabled={signInInProgress}
       onPress={handleConnectPress}
-      style={{ marginLeft: 4, flex: 1 }}
+      style={{ marginLeft: 4, flex: 1, backgroundColor: "#ccc" }}
     >
       Sign in
     </Button>
